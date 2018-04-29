@@ -7,3 +7,5 @@ const ListenButton = ({ children = <button>Listen via live stream ►</button> }
     </a>
   )
 }
+
+export default ListenButton;
