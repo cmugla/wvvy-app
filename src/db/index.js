@@ -1,4 +1,4 @@
-import { flatten, map, filter, each } from 'lodash';
+import { map } from 'lodash';
  
 export const SUNDAY = 'sunday';
 const MONDAY = 'monday';
