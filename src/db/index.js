@@ -17,8 +17,8 @@ export const sched = {
         time: '9 pm - 10 pm',
         name: `It's A Big World, Open Your Ears`,
       },
-      start: 9,
-      end: 10,
+      start: 21,
+      end: 22,
       rebroadcast: true,
       day: 'Sunday',
       dayIndex: 0
@@ -271,26 +271,30 @@ export const days = [
   SATURDAY,
 ]
 
-const getTimes = () => {
+export const earliestTime = 9;
+
+const getTimes = (startTime) => {
   let times = []
 
-  for(let i = 9; i < 24; i++) {
-    times.push(i)
+  for(let i = startTime; i < 24; i++) {
+    times.push(`${i <= 12 ? i : i - 12} ${i >= 12 ? 'pm' : ' am'}`)
   }
 
   return times;
 }
 
-export const times = getTimes();
+export const times = getTimes(earliestTime);
 
 const buildWeekFromTime = time => {
-  let finalArray = []
+  let finalArray = [];
 
-  days.forEach(day => {
+  days.forEach((day, dayColIndex) => {
     finalArray.push(null);
     sched[day].forEach(show => {
       if(show.start === time) {
         finalArray[show.dayIndex] = show
+      } else if(show.start < time && show.end > time) {
+        finalArray[show.dayIndex] = "X"
       }
     })
   })
@@ -299,7 +303,7 @@ const buildWeekFromTime = time => {
 }
 
 const buildMatrix = () => {
-  return map(times, time => buildWeekFromTime(time))
+  return map(times, (time, timeIndex) => buildWeekFromTime(timeIndex + earliestTime))
 }
 
 export const schedMatrix = buildMatrix();

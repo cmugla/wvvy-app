@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { map } from 'lodash';
 
-import { sched, days, times, schedByTime, schedMatrix } from '../db';
+import { sched, days, times, schedMatrix, earliestTime } from '../db';
 
 const Schedule = (props) => {
   console.log({ schedMatrix })
@@ -26,8 +26,8 @@ const Schedule = (props) => {
           {
             map(times, (time, timeIndex) => {
               return (
-                <tr key={`rows-${time}`}>
-                  <th>{time <= 12 ? time : time - 12}{time >= 12 ? ` pm` : ' am'}</th>
+                <tr key={`rows-${timeIndex}`}>
+                  <th>{time}</th>
                   {
                     map(schedMatrix[timeIndex], (show, showIndex) => {
                       if(!show) {
@@ -36,11 +36,15 @@ const Schedule = (props) => {
                         )
                       }
 
+                      if(show === "X") {
+                        return null;
+                      }
+
                       const { start, end, label, rebroadcast, day, dayIndex } = show;
-                      if (start === time) {
+                      if (start === (timeIndex + earliestTime)) {
                         const length = end - start;
                         return (
-                          <td key={`slots-${showIndex}`} /*rowSpan={length}*/ className="show">
+                          <td key={`slots-${showIndex}`} rowSpan={length} className="show">
                             "{label.name}"
                             <br />
                             DJ {label.dj}
