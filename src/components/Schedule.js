@@ -9,7 +9,7 @@ const Schedule = (props) => {
     <div id="calendar">
       <div className="text">
         <h1>DJ Schedule</h1>
-        <p>Any DJ's who are interested in having a show, <a href="mailto:stationmanager@wvvy.org?Subject=I%20want%20to%20be%20a%20WVVY%20DJ">we want to hear from you</a>!</p>
+        <p>Any DJ&#39;s who are interested in having a show, <a href="mailto:stationmanager@wvvy.org?Subject=I%20want%20to%20be%20a%20WVVY%20DJ">we want to hear from you</a>!</p>
       </div>
       <table className="hideMobile">
         <tbody>
