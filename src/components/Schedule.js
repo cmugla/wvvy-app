@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { map } from 'lodash';
 
 import { sched, days, times, schedMatrix, earliestTime } from '../db';
@@ -40,7 +40,7 @@ const Schedule = (props) => {
                         return null;
                       }
 
-                      const { start, end, label, rebroadcast, day, dayIndex } = show;
+                      const { start, end, label, rebroadcast } = show;
                       if (start === (timeIndex + earliestTime)) {
                         const length = end - start;
                         return (

@@ -1,5 +1,260 @@
-body {
+/* RESET CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Styles */
+body {
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  padding: 1em; }
+
+p {
+  text-align: left;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em; }
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em; 
 }
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 0.2em;
+  line-height: 1.5em;}
+
+h3 {
+  font-size: 18px;
+  padding-bottom: 0.2em;
+  line-height: 1.2em;}
+
+h4 {
+  font-size: 16px;
+  padding-bottom: 1.5em; }
+
+/*# sourceMappingURL=nowplaying.css.map */
+
+/* Variables */
+body {
+  text-align: center;
+  width: 100%;
+  font-family: "Open Sans", sans-serif; }
+
+header img {
+  width: 80%;
+  margin: 2% auto;
+  padding: 3em 0; }
+
+h1 {
+  font-size: 34px; }
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  cursor: pointer; }
+  a:hover {
+    color: #F00; }
+
+em {
+  color: #F00;
+  font-style: italic; }
+
+p {
+  padding: 0.5em;
+  line-height: 1.2em; }
+
+button {
+  cursor: pointer;
+  background-color: white;
+  border: #000 solid 0.5em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  padding: 1em;
+  margin: 2em 0 1em 0; }
+  button:hover {
+    background-color: #F00;
+    color: white;
+    border-color: #F00; }
+
+#listen .nowplaying {
+  margin: 1.5em auto 0.5em auto;
+  border: #000 solid 0.5em; }
+#listen a img {
+  width: 100%; }
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 200px;
+  overflow: hidden;
+  max-width: 100%; }
+  .embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center; }
+
+#calendar {
+  width: 100%;
+  margin: 4em auto;
+  text-align: center; }
+
+table {
+  width: 100%; }
+  table td, table th {
+    width: 5%;
+    border: #000 solid 1px;
+    vertical-align: middle;
+    height: 50px; }
+  table th {
+    font-weight: bold; }
+  table td.show {
+    border-width: thick; }
+
+#contact {
+  width: 100%;
+  margin: auto; }
+  #contact ul {
+    width: 100%; }
+    #contact ul li {
+      display: inline-block; }
+      #contact ul li a img {
+        height: 50px; }
+      #contact ul li.donate {
+        width: 200px;
+        margin: 0.5em;
+        padding: 1em;
+        background: #000; }
+        #contact ul li.donate:hover {
+          text-decoration: none;
+          background: #F00;
+          color: #fff;
+          font-weight: bold; }
+        #contact ul li.donate a.contact-btn {
+          color: #fff; }
+
+.thumbs {
+  padding-top: 2em;
+  height: 100%;
+  overflow: auto; }
+  .thumbs img {
+    width: 10%;
+    float: left;
+    margin: 0;
+    padding: 0; }
+
+ul.hideDesktop {
+  display: block;
+  text-align: left;
+  padding: 0.5em;
+  line-height: 1.2em; }
+  ul.hideDesktop h2 {
+    font-weight: bold;
+    text-decoration: underline; }
+  ul.hideDesktop em {
+    color: #000;
+    font-style: normal; }
+  ul.hideDesktop li ul {
+    padding: 0.5em 0 0.5em 0.5em; }
+    ul.hideDesktop li ul li {
+      font-weight: bold;
+      padding: 0.5em 0; }
+      ul.hideDesktop li ul li em {
+        font-weight: lighter; }
+
+.hideMobile {
+  display: none; }
+
+footer {
+  margin: 20px; }
+
+@media only screen and (min-width: 500px) {
+  header img {
+    width: 50%; }
+
+  table {
+    width: 100%; }
+
+  #calendar {
+    width: 99%; }
+
+  .text {
+    width: 80%;
+    margin: 0 auto; }
+
+  #listen .nowplaying {
+    width: 80%; } }
+@media only screen and (min-width: 700px) {
+  .hideMobile {
+    display: block; }
+
+  ul.hideDesktop {
+    display: none; } }
+@media only screen and (min-width: 1024px) {
+  #listen {
+    width: 70%;
+    margin: 0 auto; }
+    #listen a img {
+      width: 80%; }
+    #listen .nowplaying {
+      width: 70%; }
+
+  header img {
+    width: 30%;
+    padding: 4em 0; }
+
+  #calendar {
+    width: 80%; }
+
+  .text {
+    width: 50%; } }
+
+/*# sourceMappingURL=styles.css.map */
+
