@@ -21,7 +21,6 @@ class Header extends React.Component {
   }
 
   render() {
-    let extraProps = {}
     let audioStyles = { 
       width: '100%',
       textAlign: 'center', 
@@ -31,10 +30,6 @@ class Header extends React.Component {
       transform: this.state.iOSHitPlay ? 'translateY(0)' : 'translateY(40px)', 
       transition: 'all 200ms ease' 
     };
-    
-    extraProps.target = '_blank';
-    extraProps.rel = 'noopener noreferrer';
-    extraProps.onClick = this.setPlay;
 
     const n = new Date();
     const shouldShowFeaturedShow = true || n.getDate() > 23 && n.getMonth() >= 8 && n.getYear() >= 118
@@ -56,11 +51,13 @@ class Header extends React.Component {
               <p>Featured Show:</p>
               <h2>
                 DJ Al Kooper <br />
-                (musician, producer, <a href="https://en.wikipedia.org/wiki/Al_Kooper" target="_blank">and more</a>)
-                </h2><p>📡 Air date: Sept 23, 2018 📡</p>
+                (musician, producer, <a href="https://en.wikipedia.org/wiki/Al_Kooper" target="_blank" rel="noopener noreferrer">and more</a>)
+                </h2><p><span role="img" aria-label="satellite">📡</span> Air date: Sept 23, 2018 <span role="img" aria-label="satellite">📡</span></p>
                 <p>
                 <a
-                  {...extraProps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={this.setPlay}
                 >
                   Listen
                 </a>
