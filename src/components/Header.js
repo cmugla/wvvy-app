@@ -21,19 +21,19 @@ class Header extends React.Component {
   }
 
   render() {
-    let audioStyles = {}
     let extraProps = {}
+    let audioStyles = { 
+      textAlign: 'center', 
+      position: 'fixed', 
+      bottom: '0', 
+      height: '40px', 
+      transform: this.state.iOSHitPlay ? 'translateY(0)' : 'translateY(40px)', 
+      transition: 'all 200ms ease' 
+    };
+    
     if(Config.IS_IOS) {
       extraProps.target = '_blank';
       extraProps.onClick = this.setPlay;
-      audioStyles = { 
-        textAlign: 'center', 
-        position: 'fixed', 
-        bottom: '0', 
-        height: '40px', 
-        transform: this.state.iOSHitPlay ? 'translateY(0)' : 'translateY(40px)', 
-        transition: 'all 200ms ease' 
-      };
     }
 
     return (
