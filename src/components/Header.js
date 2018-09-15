@@ -9,13 +9,13 @@ const Config = {
 
 class Header extends React.Component {
   state = {
-    iOSHitPlay: false,
+    isPlaying: false,
   }
 
   setPlay = e => {
     if(Config.IS_IOS) e.preventDefault();
     this.setState({
-      iOSHitPlay: true
+      isPlaying: true
     })
     this.audio.play();
   }
@@ -27,7 +27,7 @@ class Header extends React.Component {
       position: 'fixed', 
       bottom: '0', 
       height: '40px', 
-      transform: this.state.iOSHitPlay ? 'translateY(0)' : 'translateY(40px)', 
+      transform: this.state.isPlaying ? 'translateY(0)' : 'translateY(40px)', 
       transition: 'all 200ms ease' 
     };
 
@@ -63,7 +63,7 @@ class Header extends React.Component {
                 </a>
                 {!Config.IS_IOS &&
                   <React.Fragment>
-                    <span style={{ padding: '0 1em' }}> | </span>
+                    <span style={{ padding: '0 1em' }}>|</span>
                     <a
                       download
                       href={podcast}
@@ -75,6 +75,23 @@ class Header extends React.Component {
               </p>
             </div>
           </section>
+        }
+        {
+          this.state.isPlaying &&
+          <div className="text">
+            <p>Thanks so much for listening!</p>
+            <p>
+              While you wait, win some karma points and consider giving something back to the station. Its tax deductable and very very easy to do with your PayPal account:
+            </p>
+            <div id="contact">
+              <ul>
+                <li className="gradiant-background button">
+                  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PFTS9Z9VF67RC" target="_new" className="contact-btn">Donate $1 to wVvy</a>
+                </li>
+              </ul>
+            </div>
+            <p>Enjoy the show. We're very excited about this one.</p>
+          </div>
         }
         
         <div style={audioStyles}>
@@ -89,3 +106,8 @@ class Header extends React.Component {
 }
 
 export default Header;
+
+/*
+  USING SOUNDCLOUD:
+  <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/500448357%3Fsecret_token%3Ds-H9Hh0&auto_play=${this.state.isPlaying}&hide_related=true`}></iframe>
+*/

@@ -266,6 +266,7 @@ footer {
   width: 100%;
   padding: 2em 0;
   margin-top: 1em;
+  transition: all 200ms ease;
 }
   .gradiant-background a, .gradiant-background .text {
     letter-spacing: 1px;
@@ -276,6 +277,15 @@ footer {
   }
   .gradiant-background .text {
     font-weight: 300;
+  }
+  .gradiant-background.button {
+    width: 200px;
+    margin: 0.5em;
+    padding: 1em;
+  }
+  .gradiant-background.button:hover {
+    background: crimson;
+    cursor: pointer;
   }
 
 @-webkit-keyframes Gradient {
