@@ -23,6 +23,7 @@ class Header extends React.Component {
   render() {
     let extraProps = {}
     let audioStyles = { 
+      width: '100%',
       textAlign: 'center', 
       position: 'fixed', 
       bottom: '0', 
