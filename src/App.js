@@ -16,8 +16,8 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        <ListenButton />
         <Thumbs />
+        <ListenButton />
         <Schedule />
         <div id="listen">
           <div className="text">

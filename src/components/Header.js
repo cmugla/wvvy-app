@@ -13,7 +13,7 @@ class Header extends React.Component {
   }
 
   setPlay = e => {
-    e.preventDefault();
+    if(Config.IS_IOS) e.preventDefault();
     this.setState({
       iOSHitPlay: true
     })
@@ -32,10 +32,9 @@ class Header extends React.Component {
       transition: 'all 200ms ease' 
     };
     
-    if(Config.IS_IOS) {
-      extraProps.target = '_blank';
-      extraProps.onClick = this.setPlay;
-    }
+    extraProps.target = '_blank';
+    extraProps.rel = 'noopener noreferrer';
+    extraProps.onClick = this.setPlay;
 
     return (
       <header>
@@ -45,7 +44,35 @@ class Header extends React.Component {
           <p>Welcome to WVVY. We are a fully volunteer-run radio station located on Martha's Vineyard, MA.</p>
           <p>Check out the <a href="#calendar">DJ schedule</a>, <a href="#listen">what's playing now</a>, and <a href="#contact">our support options</a> below. We are accepting requests and feedback all the time. Thank you for tuning in.</p>
         </div>
-        <a style={{ fontSize: '30px', color: 'dodgerblue' }} download href={podcast} {...extraProps}>Download Test, Click!!</a>
+
+        <section style={{ backgroundColor: 'beige', width: '100%', padding: '2em 0', marginTop: '1em' }}>
+          <div className="text">
+            <h2>Featured Show:</h2>
+            <p>
+              DJ Al Kooper <br />
+              (musician, producer, <a href="https://en.wikipedia.org/wiki/Al_Kooper" target="_blank">and more</a>)
+              </p><p>📡 Air date: Sept 23, 2018 📡</p>
+              <p>
+              <a
+                {...extraProps}
+              >
+                Listen
+              </a>
+              {!Config.IS_IOS &&
+                <React.Fragment>
+                  <span style={{ padding: '0 1em' }}> | </span>
+                  <a
+                    download
+                    href={podcast}
+                  >
+                    Download
+                  </a>
+                </React.Fragment>
+              }
+            </p>
+          </div>
+        </section>
+        
         <div style={audioStyles}>
           <audio ref={node => this.audio = node} controls preload="auto">
             <source src={podcast} type="audio/mpeg" />

@@ -12,7 +12,7 @@ import img10 from '../images/gen/10.jpg';
 
 const Thumbs = props => {
   return (
-    <div class="thumbs">
+    <div className="thumbs">
       <img src={img1} alt="thumbnail" />
       <img src={img2} alt="thumbnail" />
       <img src={img3} alt="thumbnail" />
