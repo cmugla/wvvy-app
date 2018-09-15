@@ -258,6 +258,18 @@ export const sched = {
       day: 'Saturday',
       dayIndex: 6
     },
+    {
+      label: {
+        dj: `Farls`,
+        time: '8 pm - 10 pm',
+        name: `Two farlours`,
+      },
+      start: 20,
+      end: 22,
+      rebroadcast: false,
+      day: 'Saturday',
+      dayIndex: 6
+    }
   ], 
 };
 

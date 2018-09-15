@@ -176,7 +176,8 @@ table {
           text-decoration: none;
           background: #F00;
           color: #fff;
-          font-weight: bold; }
+          font-weight: bold;
+          cursor: pointer; }
         #contact ul li.donate a.contact-btn {
           color: #fff; }
 
