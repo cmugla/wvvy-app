@@ -18,9 +18,11 @@ class Boombox extends PureComponent {
 
   render() {
     return (
-      <ListenButton onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-        <img src={this.state.isHovered ? boomColor : boom100} alt="Click here to listen!" />
-      </ListenButton>
+      <div style={{ width: '100vw' }}>
+        <ListenButton onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+          <img style={{ width: '100%' }} src={this.state.isHovered ? boomColor : boom100} alt="Click here to listen!" />
+        </ListenButton>
+      </div>
     )
   }
 }
