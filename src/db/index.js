@@ -1,12 +1,12 @@
 import { map } from 'lodash';
  
-export const SUNDAY = 'sunday';
-const MONDAY = 'monday';
-const TUESDAY = 'tuesday';
-const WEDNESDAY = 'wednesday';
-const THURSDAY = 'thursday';
-const FRIDAY = 'friday';
-const SATURDAY = 'saturday';
+export const SUNDAY = 'Sunday';
+const MONDAY = 'Monday';
+const TUESDAY = 'Tuesday';
+const WEDNESDAY = 'Wednesday';
+const THURSDAY = 'Thursday';
+const FRIDAY = 'Friday';
+const SATURDAY = 'Saturday';
 
 export const sched = {
   /* Sunday */
