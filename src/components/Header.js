@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logo from '../images/logo.jpg';
-import podcast from '../audio/test.mp3';
+import podcast from '../mp3/al_Kooper_podcast.mp3';
 
 const Config = {
   IS_IOS: !!navigator.userAgent.match(/iPhone|iPad|iPod/i),
@@ -17,7 +17,14 @@ class Header extends React.Component {
     this.setState({
       isPlaying: true
     })
+    this.showDownload();
     this.audio.play();
+  }
+
+  showDownload = () => {
+    this.setState({
+      showMessage: true
+    })
   }
 
   render() {
@@ -67,6 +74,7 @@ class Header extends React.Component {
                     <a
                       download
                       href={podcast}
+                      onClick={this.showDownload}
                     >
                       Download
                     </a>
@@ -77,7 +85,7 @@ class Header extends React.Component {
           </section>
         }
         {
-          this.state.isPlaying &&
+          this.state.showMessage &&
           <div className="text">
             <p>Thanks so much for listening!</p>
             <p>
@@ -93,7 +101,7 @@ class Header extends React.Component {
             <p>Enjoy the show. We're very excited about this one.</p>
           </div>
         }
-        
+
         <div style={audioStyles}>
           <audio ref={node => this.audio = node} controls preload="auto">
             <source src={podcast} type="audio/mpeg" />
