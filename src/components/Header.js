@@ -75,7 +75,7 @@ class Header extends React.Component {
                       download
                       href={podcast}
                       onClick={this.showDownload}
-                      target="_new"
+                      target="_blank"
                     >
                       Download
                     </a>
