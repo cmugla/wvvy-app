@@ -38,8 +38,11 @@ class Header extends React.Component {
       transition: 'all 200ms ease' 
     };
 
+    let urlParams = new URLSearchParams(window.location.search);
+    let myParam = urlParams.get('show_me_al');
+
     const n = new Date();
-    const shouldShowFeaturedShow = true || n.getDate() > 23 && n.getMonth() >= 8 && n.getYear() >= 118
+    const shouldShowFeaturedShow = myParam === 'true' || (n.getDate() > 23 && n.getMonth() >= 8 && n.getYear() >= 118);
 
     return (
       <header>
@@ -90,7 +93,7 @@ class Header extends React.Component {
           <div className="text">
             <p>Thanks so much for listening!</p>
             <p>
-              While you wait, win some karma points and consider giving something back to the station. Its tax deductable and very very easy to do with your PayPal account:
+              Win some karma points and consider giving something back to the station. Its tax deductable and very very easy to donate with PayPal or a regular ol credit/debit card:
             </p>
             <div id="contact">
               <ul>
@@ -115,8 +118,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-
-/*
-  USING SOUNDCLOUD:
-  <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/500448357%3Fsecret_token%3Ds-H9Hh0&auto_play=${this.state.isPlaying}&hide_related=true`}></iframe>
-*/
