@@ -67,7 +67,7 @@ class Header extends React.Component {
                   rel="noopener noreferrer"
                   onClick={this.setPlay}
                 >
-                  Listen
+                  Play now
                 </a>
               }
               {shouldShowFeaturedShow && !Config.IS_IOS &&
