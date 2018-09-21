@@ -42,7 +42,7 @@ class Header extends React.Component {
     let myParam = urlParams.get('show_me_al');
 
     const n = new Date();
-    const shouldShowFeaturedShow = myParam === 'true' || (n.getDate() > 23 && n.getMonth() >= 8 && n.getYear() >= 118);
+    const shouldShowFeaturedShow = myParam === 'true' || (n.getDate() >= 23 && n.getMonth() >= 8 && n.getYear() >= 118 && n.getHours() >= 11);
 
     return (
       <header>
@@ -52,18 +52,15 @@ class Header extends React.Component {
           <p>Welcome to WVVY. We are a fully volunteer-run radio station located on Martha's Vineyard, MA.</p>
           <p>Check out the <a href="#calendar">DJ schedule</a>, <a href="#listen">what's playing now</a>, and <a href="#contact">our support options</a> below. We are accepting requests and feedback all the time. Thank you for tuning in.</p>
         </div>
-
-        {
-          shouldShowFeaturedShow
-          &&
-          <section className="gradiant-background">
-            <div className="text">
-              <p>Featured Show:</p>
-              <h2>
-                DJ Al Kooper <br />
-                (musician, producer, <a href="https://en.wikipedia.org/wiki/Al_Kooper" target="_blank" rel="noopener noreferrer">and more</a>)
-                </h2><p><span role="img" aria-label="satellite">📡</span> Air date: Sept 23, 2018 <span role="img" aria-label="satellite">📡</span></p>
-                <p>
+        <section className="gradiant-background">
+          <div className="text">
+            <p>Featured Show:</p>
+            <h2>
+              DJ Al Kooper <br />
+              (musician, producer, <a href="https://en.wikipedia.org/wiki/Al_Kooper" target="_blank" rel="noopener noreferrer">and more</a>)
+              </h2><p><span role="img" aria-label="satellite">📡</span> Air date: Sept 23, 2018 <span role="img" aria-label="satellite">📡</span></p>
+              <p>
+              {shouldShowFeaturedShow && 
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
@@ -71,29 +68,29 @@ class Header extends React.Component {
                 >
                   Listen
                 </a>
-                {!Config.IS_IOS &&
-                  <React.Fragment>
-                    <span style={{ padding: '0 1em' }}>|</span>
-                    <a
-                      download
-                      href={podcast}
-                      onClick={this.showDownload}
-                      target="_blank"
-                    >
-                      Download
-                    </a>
-                  </React.Fragment>
-                }
-              </p>
-            </div>
-          </section>
-        }
+              }
+              {shouldShowFeaturedShow && !Config.IS_IOS &&
+                <React.Fragment>
+                  <span style={{ padding: '0 1em' }}>|</span>
+                  <a
+                    download
+                    href={podcast}
+                    onClick={this.showDownload}
+                    target="_blank"
+                  >
+                    Download
+                  </a>
+                </React.Fragment>
+              }
+            </p>
+          </div>
+        </section>
         {
           this.state.showMessage &&
           <div className="text">
             <p>Thanks so much for listening!</p>
             <p>
-              Win some karma points and consider giving something back to the station. Its tax deductable and very very easy to donate with PayPal or a regular ol credit/debit card:
+              Win some karma points and consider giving something back to the station. WVVY is an all volunteer radio station and survives solely on your grace and generosity.  Its tax deductible (501(c)3) and very very easy to donate with PayPal or a regular ol credit/debit card:
             </p>
             <div id="contact">
               <ul>
@@ -102,6 +99,7 @@ class Header extends React.Component {
                 </li>
               </ul>
             </div>
+            <p>You can also send a check to WVVY, PO Box 1989, Vineyard Haven, MA  02568</p>
             <p>Enjoy the show. We're very excited about this one.</p>
           </div>
         }

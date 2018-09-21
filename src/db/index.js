@@ -22,6 +22,18 @@ export const sched = {
       rebroadcast: true,
       day: 'Sunday',
       dayIndex: 0
+    },
+    {
+      label: {
+        dj: 'Al Kooper',
+        time: '11 am - 12 pm',
+        name: `New Music for Old People`,
+      },
+      start: 11,
+      end: 12,
+      rebroadcast: false,
+      day: 'Sunday',
+      dayIndex: 0
     }
   ], 
 
@@ -149,6 +161,18 @@ export const sched = {
       },
       start: 19,
       end: 21,
+      rebroadcast: false,
+      day: 'Wednesday',
+      dayIndex: 3
+    },
+    {
+      label: {
+        dj: `Al Kooper`,
+        time: '11 pm - 12 am',
+        name: `New Music For Old People`,
+      },
+      start: 23,
+      end: 0,
       rebroadcast: false,
       day: 'Wednesday',
       dayIndex: 3
