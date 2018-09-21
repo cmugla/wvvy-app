@@ -58,6 +58,7 @@ class Header extends React.Component {
             <h2>
               DJ Al Kooper <br />
               (musician, producer, <a href="https://en.wikipedia.org/wiki/Al_Kooper" target="_blank" rel="noopener noreferrer">and more</a>)
+              "New Music for Old People"
               </h2><p><span role="img" aria-label="satellite">📡</span> Air date: Sept 23, 2018 <span role="img" aria-label="satellite">📡</span></p>
               <p>
               {shouldShowFeaturedShow && 
