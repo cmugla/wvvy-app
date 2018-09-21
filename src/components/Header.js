@@ -59,7 +59,7 @@ class Header extends React.Component {
               DJ Al Kooper <br />
               (musician, producer, <a href="https://en.wikipedia.org/wiki/Al_Kooper" target="_blank" rel="noopener noreferrer">and more</a>)<br />
               "New Music for Old People"
-              </h2><p><span style:{{ paddingRight: '5px' }} role="img" aria-label="satellite">📡</span> Sundays at 11AM & Wednesdays at 11PM <span style:{{ paddingLeft: '5px' }} role="img" aria-label="satellite">📡</span></p>
+              </h2><p><span style={{ paddingRight: '5px' }} role="img" aria-label="satellite">📡</span> Sundays at 11AM & Wednesdays at 11PM <span style={{ paddingLeft: '5px' }} role="img" aria-label="satellite">📡</span></p>
               <p>
               {shouldShowFeaturedShow && 
                 <a
