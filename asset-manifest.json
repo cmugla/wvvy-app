@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.86caf0b0.css",
   "main.css.map": "static/css/main.86caf0b0.css.map",
-  "main.js": "static/js/main.70d7de65.js",
-  "main.js.map": "static/js/main.70d7de65.js.map",
+  "main.js": "static/js/main.54b0e492.js",
+  "main.js.map": "static/js/main.54b0e492.js.map",
   "static/media/1.jpg": "static/media/1.16298591.jpg",
   "static/media/10.jpg": "static/media/10.d3aa3732.jpg",
   "static/media/2.jpg": "static/media/2.efc99498.jpg",
@@ -13,10 +13,10 @@
   "static/media/7.jpg": "static/media/7.56e740d9.jpg",
   "static/media/8.jpg": "static/media/8.b0fac1a1.jpg",
   "static/media/9.jpg": "static/media/9.f5a487c5.jpg",
+  "static/media/al_Kooper_podcast.mp3": "static/media/al_Kooper_podcast.4528f4a2.mp3",
   "static/media/boom-100.jpg": "static/media/boom-100.56712138.jpg",
   "static/media/email-icon-hi-hover.png": "static/media/email-icon-hi-hover.c28670b9.png",
   "static/media/email-icon-hi.png": "static/media/email-icon-hi.1a65d263.png",
   "static/media/listen-color.jpg": "static/media/listen-color.c4454961.jpg",
-  "static/media/logo.jpg": "static/media/logo.f2ae4b66.jpg",
-  "static/media/test.mp3": "static/media/test.bfec100d.mp3"
+  "static/media/logo.jpg": "static/media/logo.f2ae4b66.jpg"
 }
