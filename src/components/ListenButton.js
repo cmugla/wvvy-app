@@ -13,6 +13,9 @@ class ListenButton extends React.Component {
     this.setState({
       isPlaying: true
     })
+    if (this.audioPlayer.audio.readyState !== 4) {
+      this.audioPlayer.audio.load();
+    }
     this.audioPlayer.audio.play();
   }
 
