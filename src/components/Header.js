@@ -2,6 +2,7 @@ import React from 'react';
 
 import logo from '../images/logo.jpg';
 import podcast from '../mp3/al_Kooper_podcast.mp3';
+import AudioPlayer from './AudioPlayer';
 
 const Config = {
   IS_IOS: !!navigator.userAgent.match(/iPhone|iPad|iPod/i),
@@ -18,7 +19,7 @@ class Header extends React.Component {
       isPlaying: true
     })
     this.showDownload();
-    this.audio.play();
+    this.audioPlayer.audio.play();
   }
 
   showDownload = () => {
@@ -28,16 +29,6 @@ class Header extends React.Component {
   }
 
   render() {
-    let audioStyles = { 
-      width: '100%',
-      textAlign: 'center', 
-      position: 'fixed', 
-      bottom: '0', 
-      height: '40px', 
-      transform: this.state.isPlaying ? 'translateY(0)' : 'translateY(40px)', 
-      transition: 'all 200ms ease' 
-    };
-
     let urlParams = new URLSearchParams(window.location.search);
     let myParam = urlParams.get('show_me_al');
 
@@ -105,12 +96,7 @@ class Header extends React.Component {
           </div>
         }
 
-        <div style={audioStyles}>
-          <audio ref={node => this.audio = node} controls preload="auto">
-            <source src={podcast} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio>
-        </div>
+        <AudioPlayer ref={node => this.audioPlayer = node} podcast={podcast} isPlaying={this.state.isPlaying} />
       </header>
     )
   }
