@@ -30,11 +30,7 @@ class Header extends React.Component {
   }
 
   render() {
-    let urlParams = new URLSearchParams(window.location.search);
-    let myParam = urlParams.get('show_me_al');
-
-    const n = new Date();
-    const shouldShowFeaturedShow = myParam === 'true' || (n.getDate() >= 23 && n.getMonth() >= 8 && n.getYear() >= 118 && n.getHours() >= 11);
+    const shouldShowFeaturedShow = true;
 
     return (
       <header>
