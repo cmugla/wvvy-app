@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logo from '../images/logo.jpg';
-import podcast from '../mp3/new_Music_for_Old_People_Ep1.mp3';
+import podcast from '../mp3/New_Music_for_Old_People_Ep1.mp3';
 import AudioPlayer from './AudioPlayer';
 import DonateMessage from './DonateMessage';
 
