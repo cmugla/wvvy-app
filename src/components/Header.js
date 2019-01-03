@@ -1,37 +1,9 @@
 import React from 'react';
 
 import logo from '../images/logo.jpg';
-import podcast from '../mp3/New_Music_for_Old_People_Ep1.mp3';
-import AudioPlayer from './AudioPlayer';
-import DonateMessage from './DonateMessage';
-
-const Config = {
-  IS_IOS: !!navigator.userAgent.match(/iPhone|iPad|iPod/i),
-}
 
 class Header extends React.Component {
-  state = {
-    isPlaying: false,
-  }
-
-  setPlay = e => {
-    if(Config.IS_IOS) e.preventDefault();
-    this.setState({
-      isPlaying: true
-    })
-    this.showDownload();
-    this.audioPlayer.audio.play();
-  }
-
-  showDownload = () => {
-    this.setState({
-      showMessage: true
-    })
-  }
-
   render() {
-    const shouldShowFeaturedShow = true;
-
     return (
       <header>
         <img src={logo} alt="wvvy Community Radio 96.7 lpfm" />
@@ -40,46 +12,6 @@ class Header extends React.Component {
           <p>Welcome to WVVY. We are a fully volunteer-run radio station located on Martha's Vineyard, MA.</p>
           <p>Check out the <a href="#calendar">DJ schedule</a>, <a href="#listen">what's playing now</a>, and <a href="#contact">our support options</a> below. We are accepting requests and feedback all the time. Thank you for tuning in.</p>
         </div>
-        <section className="gradiant-background">
-          <div className="text">
-            <p>Featured Show:</p>
-            <h2>
-              DJ Al Kooper <br />
-              (musician, producer, <a href="https://en.wikipedia.org/wiki/Al_Kooper" target="_blank" rel="noopener noreferrer">and more</a>)<br />
-              "New Music for Old People"
-              </h2><p><span style={{ paddingRight: '5px' }} role="img" aria-label="satellite">📡</span> Sundays at 11AM & Wednesdays at 11PM <span style={{ paddingLeft: '5px' }} role="img" aria-label="satellite">📡</span></p>
-              <p>
-              {shouldShowFeaturedShow && 
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={this.setPlay}
-                >
-                  Play now
-                </a>
-              }
-              {shouldShowFeaturedShow && !Config.IS_IOS &&
-                <React.Fragment>
-                  <span style={{ padding: '0 1em' }}>|</span>
-                  <a
-                    download
-                    href={podcast}
-                    onClick={this.showDownload}
-                    target="_blank"
-                  >
-                    Download
-                  </a>
-                </React.Fragment>
-              }
-            </p>
-          </div>
-        </section>
-        {
-          this.state.showMessage &&
-          <DonateMessage />
-        }
-
-        <AudioPlayer ref={node => this.audioPlayer = node} podcast={podcast} isPlaying={this.state.isPlaying} />
       </header>
     )
   }
