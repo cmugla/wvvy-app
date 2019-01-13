@@ -27,7 +27,7 @@ const Home = props => {
           showDownloads
         }) => {
           const diff = weeksBetween()
-          const shouldShowPauseMsg = diff === 15 || diff === 16 || diff === 17;
+          const shouldShowPauseMsg = diff === 15 || diff === 16;
           return (
             <section className="gradiant-background">
               <div className="text">

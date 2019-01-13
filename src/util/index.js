@@ -8,9 +8,9 @@ export const getEpNumber = () => {
   const diff = weeksBetween();
 
   // Show is paused for two weeks!
-  if(diff === 15 || diff === 16 || diff === 17) {
+  if(diff === 15 || diff === 16) {
     return 15
   }
 
-  return diff - 2;
+  return diff - 1;
 }
