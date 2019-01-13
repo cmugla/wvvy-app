@@ -57,7 +57,7 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   padding-bottom: 0.5em;
-  padding-top: 0.5em; 
+  padding-top: 0.5em;
 }
 
 h2 {
@@ -131,6 +131,8 @@ button {
   padding-bottom: 56.25%;
   height: 200px;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
   max-width: 100%; }
   .embed-container iframe, .embed-container object, .embed-container embed {
     position: absolute;
